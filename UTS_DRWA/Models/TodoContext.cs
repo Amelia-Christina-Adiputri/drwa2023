@@ -1,13 +1,13 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace Guru.Models;
+namespace TodoApi.Models;
 
-public class GuruContext : DbContext
+public class TodoContext : DbContext
 {
-    public GuruContext(DbContextOptions<GuruContext> options)
+    public TodoContext(DbContextOptions<TodoContext> options)
         : base(options)
     {
     }
 
-    public DbSet<GuruItem> GuruItems { get; set; } = null!;
+    public DbSet<TodoItem> TodoItems { get; set; } = null!;
 }

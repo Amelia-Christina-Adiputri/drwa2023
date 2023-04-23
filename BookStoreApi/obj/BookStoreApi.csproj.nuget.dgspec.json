@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\A Kuliah\\SMT 4\\Restful API\\TodoApi\\BookStoreApi\\BookStoreApi.csproj": {}
+    "C:\\Users\\Valent\\BookStoreApi\\BookStoreApi.csproj": {}
   },
   "projects": {
-    "E:\\A Kuliah\\SMT 4\\Restful API\\TodoApi\\BookStoreApi\\BookStoreApi.csproj": {
+    "C:\\Users\\Valent\\BookStoreApi\\BookStoreApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\A Kuliah\\SMT 4\\Restful API\\TodoApi\\BookStoreApi\\BookStoreApi.csproj",
+        "projectUniqueName": "C:\\Users\\Valent\\BookStoreApi\\BookStoreApi.csproj",
         "projectName": "BookStoreApi",
-        "projectPath": "E:\\A Kuliah\\SMT 4\\Restful API\\TodoApi\\BookStoreApi\\BookStoreApi.csproj",
+        "projectPath": "C:\\Users\\Valent\\BookStoreApi\\BookStoreApi.csproj",
         "packagesPath": "C:\\Users\\Valent\\.nuget\\packages\\",
-        "outputPath": "E:\\A Kuliah\\SMT 4\\Restful API\\TodoApi\\BookStoreApi\\obj\\",
+        "outputPath": "C:\\Users\\Valent\\BookStoreApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Valent\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,10 +40,6 @@
         "net7.0": {
           "targetAlias": "net7.0",
           "dependencies": {
-            "Microsoft.AspNet.WebApi.Core": {
-              "target": "Package",
-              "version": "[5.2.9, )"
-            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[7.0.3, )"
@@ -55,10 +51,6 @@
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.4.0, )"
-            },
-            "System.ComponentModel.Annotations": {
-              "target": "Package",
-              "version": "[5.0.0, )"
             }
           },
           "imports": [

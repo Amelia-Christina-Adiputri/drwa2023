@@ -1,72 +1,106 @@
 using BookStoreApi.Models;
 using BookStoreApi.Services;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Net.Http;
+using System.Web.Http;
 
-namespace BookStoreApi.Controllers;
+namespace BookStoreApi.Controllers{
 
 [ApiController]
-[Route("api/[controller]")]
-public class BooksController : ControllerBase
-{
-    private readonly BooksService _booksService;
-
-    public BooksController(BooksService booksService) =>
-        _booksService = booksService;
-
-    [HttpGet]
-    public async Task<List<Book>> Get() =>
-        await _booksService.GetAsync();
-
-    [HttpGet("{id:length(24)}")]
-    public async Task<ActionResult<Book>> Get(string id)
+[Microsoft.AspNetCore.Mvc.Route("api/[controller]")]
+public class BooksController : ApiController
     {
-        var book = await _booksService.GetAsync(id);
-
-        if (book is null)
+        [System.Web.Http.HttpPost]
+        public HttpResponseMessage Post(Book product)
         {
-            return NotFound();
-        }
-
-        return book;
+            if (ModelState.IsValid)
+            {
+                return new HttpResponseMessage(HttpStatusCode.OK);
+            }
+            else
+            {
+                return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+            }
     }
+}
 
-    [HttpPost]
-    public async Task<IActionResult> Post(Book newBook)
-    {
-        await _booksService.CreateAsync(newBook);
+// {
+//     public HttpResponseMessage Post(Book book)
+//         {
+//             if (ModelState.IsValid)
+//             {
+//                 // Do something with the product (not shown).
 
-        return CreatedAtAction(nameof(Get), new { id = newBook.Id }, newBook);
-    }
+//                 return new HttpResponseMessage(HttpStatusCode.OK);
+//             }
+//             else
+//             {
+//                 return new HttpResponseMessage(HttpStatusCode.OK);;
+//                 return Request.CreateErrorResponse(HttpStatusCode.BadRequest, ModelState);
+//                 // return BadRequest();
+//             }
+//         }
+// }
+    // private readonly BooksService _booksService;
 
-    [HttpPut("{id:length(24)}")]
-    public async Task<IActionResult> Update(string id, Book updatedBook)
-    {
-        var book = await _booksService.GetAsync(id);
+    // public BooksController(BooksService booksService) =>
+    //     _booksService = booksService;
 
-        if (book is null)
-        {
-            return NotFound();
-        }
+    // [HttpGet]
+    // public async Task<List<Book>> Get() =>
+    //     await _booksService.GetAsync();
 
-        updatedBook.Id = book.Id;
+    // [HttpGet("{id:length(24)}")]
+    // public async Task<ActionResult<Book>> Get(string id)
+    // {
+    //     var book = await _booksService.GetAsync(id);
 
-        await _booksService.UpdateAsync(id, updatedBook);
+    //     if (book is null)
+    //     {
+    //         return NotFound();
+    //     }
 
-        return NoContent();
-    }
+    //     return book;
+    // }
 
-    [HttpDelete("{id:length(24)}")]
-    public async Task<IActionResult> Delete(string id)
-    {
-        var book = await _booksService.GetAsync(id);
+    // [HttpPost]
+    // public async Task<IActionResult> Post(Book newBook)
+    // {
+    //     await _booksService.CreateAsync(newBook);
 
-        if (book is null)
-        {
-            return NotFound();
-        }
+    //     return CreatedAtAction(nameof(Get), new { id = newBook.Id }, newBook);
+    // }
 
-        await _booksService.RemoveAsync(id);
+    // [HttpPut("{id:length(24)}")]
+    // public async Task<IActionResult> Update(string id, Book updatedBook)
+    // {
+    //     var book = await _booksService.GetAsync(id);
 
-        return NoContent();
-    }
+    //     if (book is null)
+    //     {
+    //         return NotFound();
+    //     }
+
+    //     updatedBook.Id = book.Id;
+
+    //     await _booksService.UpdateAsync(id, updatedBook);
+
+    //     return NoContent();
+    // }
+
+    // [HttpDelete("{id:length(24)}")]
+    // public async Task<IActionResult> Delete(string id)
+    // {
+    //     var book = await _booksService.GetAsync(id);
+
+    //     if (book is null)
+    //     {
+    //         return NotFound();
+    //     }
+
+    //     await _booksService.RemoveAsync(id);
+
+    //     return NoContent();
+    // }
 }

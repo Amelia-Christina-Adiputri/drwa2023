@@ -136,3 +136,10 @@ E:\A Kuliah\SMT 4\materi SIL\New folder\BookStoreApi\obj\Debug\net7.0\refint\Boo
 E:\A Kuliah\SMT 4\materi SIL\New folder\BookStoreApi\obj\Debug\net7.0\BookStoreApi.pdb
 E:\A Kuliah\SMT 4\materi SIL\New folder\BookStoreApi\obj\Debug\net7.0\BookStoreApi.genruntimeconfig.cache
 E:\A Kuliah\SMT 4\materi SIL\New folder\BookStoreApi\obj\Debug\net7.0\ref\BookStoreApi.dll
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.JsonWebTokens.dll
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Logging.dll
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll

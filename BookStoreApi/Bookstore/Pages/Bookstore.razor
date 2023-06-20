@@ -1,0 +1,79 @@
+﻿@page "/bookstore"
+@inject HttpClient Http
+@inject NavigationManager UriHelper
+@using System.Net.Http
+@using System.Net.Http.Json
+@inject Microsoft.AspNetCore.Components.NavigationManager navigationManager
+@inject NavigationManager UriHelper
+
+<PageTitle>BookStore</PageTitle>
+
+<h3>Bookstore (@bookstores.Count(todo=>!todo.IsDone))</h3>
+
+@if (bookstores == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Book Name</th>
+                <th>Price</th>
+                <th>Category</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var bookstore in bookstores)
+            {
+                <tr>
+                    <td>@bookstore.Id</td>
+                    <td>@bookstore.BookName</td>
+                    <td>@bookstore.Price</td>
+                    <td>@bookstore.Category</td>
+                    <td>@bookstore.Author</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<ul>
+    @foreach (var bookstore in bookstores)
+    {
+        <li>@bookstore.Title</li>
+        <li>
+            <input type="checkbox" @bind="bookstore.IsDone" />
+            <input @bind="bookstore.Title" />
+        </li>
+        <li>@bookstore.Id</li>
+        <li>@bookstore.BookName</li>
+        <li>@bookstore.Price</li>
+        <li>@bookstore.Category</li>
+        <li>@bookstore.Author</li>
+    }
+</ul>
+
+@* <input placeholder="Something todo" @bind="newBookStore" />
+<button @onclick="AddTodo">Add todo</button> *@
+
+@code {
+    private BookStore[]? bookstores;
+    protected override async Task OnInitializedAsync()
+    {
+        bookstores = await Http.GetFromJsonAsync<BookStore[]>("http://localhost:5053/api/Books");
+    }
+    @* private string? newBookStore;
+    private List<BookStore> bookstores = new();
+            private void AddTodo()
+    {
+        if (!string.IsNullOrWhiteSpace(newBookStore))
+        {
+            bookstores.Add(new BookStore { BookName = newBookStore });
+            newBookStore = string.Empty;
+        }
+    } *@
+}

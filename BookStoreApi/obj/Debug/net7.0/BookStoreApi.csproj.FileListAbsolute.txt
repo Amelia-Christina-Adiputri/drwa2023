@@ -143,3 +143,5 @@ E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.Id
 E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\Microsoft.IdentityModel.Tokens.dll
 E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\bin\Debug\net7.0\System.IdentityModel.Tokens.Jwt.dll
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\obj\Debug\net7.0\BookStoreApi.RazorAssemblyInfo.cache
+E:\A Kuliah\SMT 4\Restful API\TodoApi\BookStoreApi\obj\Debug\net7.0\BookStoreApi.RazorAssemblyInfo.cs

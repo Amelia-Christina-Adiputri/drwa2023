@@ -1,6 +1,6 @@
 using System.Net;
 using UAS.Models;
-using BookStoreApi.Services;
+using UAS.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,8 +12,8 @@ public class PresensiHarianGuruController : ControllerBase
 {
     private readonly PresensiHarianGuruService _presensiHarianGuruService;
 
-    public PresensiHarianGuruController(PresensiHarianGuru presensiHarianGuruService) =>
-        _presensiHarianGuruService = presensiHarianGuruService;
+    public PresensiHarianGuruController(PresensiHarianGuruService presensiMengajarService) =>
+        _presensiHarianGuruService = presensiMengajarService;
 
     [HttpGet]
     [Authorize]

@@ -23,7 +23,6 @@ builder.Services.Configure<PresensiMengajarDatabaseSettings>(
 
 builder.Services.AddSingleton<BooksService>();
 
-
 // Add services to the container.
 
 builder.Services.AddControllers().AddJsonOptions(options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
